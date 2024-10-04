@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import './CSS/LoginSignup.css';
 const LoginSignup = () => {
   const [state,setState]=useState("Login");
@@ -14,7 +14,7 @@ setFormData({...formData,[e.target.name]:e.target.value})
   const login=async ()=>{
 console.log("login execute",formData);
 let responseData;
-await fetch('http://localhost:4000/login',{
+await fetch('https://e-commerce-website-7zdw.onrender.com/login',{
   method:'POST',
   headers:{
     Acccept:'application/form-data',
@@ -33,7 +33,7 @@ if(responseData.success){
   const signup=async()=>{
 console.log("signup execute",formData)
 let responseData;
-await fetch('http://localhost:4000/signup',{
+await fetch('https://e-commerce-website-7zdw.onrender.com/signup',{
   method:'POST',
   headers:{
     Acccept:'application/form-data',
