@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import new_collections from '../Assets/new_collections'
 import './NewCollections.css';
 import Item from '../Item/Item'
+import { useSearchParams } from 'react-router-dom';
 const NewCollections = () => {
+  const [new_collection,setNew_collection]=useState([]);
+  useEffect(()=>{
+fetch('http://localhost:4000/newcollections').then((resp)=>resp.json()).then((data)=>setNew_collection(data));
+  },[])
   return (
     <div className='new-collections'>
         <h1>NEW COLLECTIONS</h1>
